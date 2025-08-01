@@ -1,0 +1,47 @@
+@keyframes move-time {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hand {
+    width: 120px;
+    height: 7px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%;
+    transform: rotate(0deg);
+    border-radius: 2px;
+    animation-name: move-time;
+    animation-iteration-count: infinite;
+}
+
+.watch {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 80px;
+    background-color: rgb(65, 105, 225);
+    margin: 30px;
+}
+
+.hour {
+    background-color: rgb(0, 0, 0);
+    transform: rotate(-20deg);
+    animation-duration: 3600s;
+}
+.minute {
+    background-color: rgb(0, 128, 0);
+    transform: rotate(-145deg);
+    animation-duration: 60s;
+}
+.second {
+    background-color: rgb(255, 0, 0);
+    transform: rotate(-205deg);
+    animation-duration: 1s;
+}

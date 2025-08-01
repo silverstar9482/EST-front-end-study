@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            div {
+                background-color: aliceblue;
+                height: 200px;
+                margin: auto;
+                /* width: 1400px; */
+                /* max-width: calc(100% - 60px); */
+                /* min-width: ; */
+
+                /* min()과 max() 함수는 여러 값 중 최소값 또는 최대값을 선택 */
+                width: min(600px, 90%);
+                width: max(600px, 90%, 300px);
+            }
+            ol {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                width: calc((100% - (50px * 2)) / 3);
+                list-style: none;
+                background-color: lightcoral;
+                float: left;
+                padding: 20px 0;
+
+                /* clamp() 함수는 값을 지정된 범위 내로 고정 */
+                /* clamp(최소값, 선호값, 최대값) */
+                font-size: clamp(20px, 4vw, 32px);
+            }
+
+            li:not(:first-child) {
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <ol>
+            <li>이불 정리</li>
+            <li>고양이 모래 치우기</li>
+            <li>물 한잔 마시기</li>
+        </ol>
+    </body>
+</html>

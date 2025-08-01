@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            /* :root는 메인으로 설정해주는 CSS. html 최상위요소 선택. 나중에 변수로 선언해서 속성 써줄때 한번에 바꿔줌 */
+            /* 스타일 값을 한 곳에서 중앙 집중식으로 관리할 수 있음. */
+            /* 테마변경이나 다크모드 때 구현이 용이함. */
+            /* 변수로 어떤 값을 일관된 스타일 유지하고 유지보수를 용이하게 함. */
+            :root {
+                --main-color: blue;
+                --main-font-size: 24px;
+                --btn-padding: 4px 20px;
+            }
+
+            body {
+                color: var(--main-color);
+                font-size: var(main-font-size);
+            }
+
+            button {
+                padding: var(--btn-padding);
+            }
+        </style>
+    </head>
+    <body>
+        <p>안녕하세요</p>
+        <button>로그인 버튼</button>
+        <div class="color1">
+            <p>안녕하세요</p>
+            <button>회원가입 버튼</button>
+        </div>
+        <div class="color2">
+            <p>안녕하세요</p>
+            <button>회원가입 버튼</button>
+        </div>
+    </body>
+</html>

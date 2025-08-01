@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            p {
+                width: 300px;
+                border: solid 1px black;
+
+                /* text-align: right; */
+                /* text-align: center; */
+                /* 가독성이 좋지않아 권장하지 않음 */
+                /* text-align: justify; */
+
+                /* 텍스트의 시작부분 들여쓰기 설정 */
+                text-indent: 30px;
+
+                /* 모든 문자 사이에서 줄바꿈 가능 */
+                /* 영어 적용, 한중일 문자는 이미 모든 문자 사이에 줄바꿈이 적용되어 영어만 적용됨 */
+                word-break: break-all;
+                /* 한중일 단어 사이에서만 줄바꿈 가능 */
+                word-break: keep-all;
+            }
+
+            /* 요소의 크기를 넘친 텍스트 자름 */
+            .overflow-clip {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: clip;
+            }
+
+            /* 요송의 크기를 넘친 텍스트 말줄임 처리 */
+            .ellipsis {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .multi-ellipsis {
+                overflow: hidden;
+                /* -webkit- 웹브라우저 벤더프리픽스 중 한 종류(브라우저 엔진이다.) */
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fugit
+            culpa inventore aliquam hic nesciunt, accusamus facilis, voluptas ea
+            cumque aperiam enim est harum tempora impedit quae qui in dolore!
+        </p>
+        <p class="ko">
+            이것은 매우긴한글단어가있는텍스트입니다. 줄바꿈이 어떻게 처리되는지
+            확인해보세요. 이것은 매우긴한글단어가있는텍스트입니다. 줄바꿈이
+            어떻게 처리되는지 확인해보세요. 이것은
+            매우긴한글단어가있는텍스트입니다. 줄바꿈이 어떻게 처리되는지
+            확인해보세요.
+        </p>
+        <p class="overflow-clip">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+            aperiam obcaecati vitae ea atque neque dolores impedit alias porro
+            sequi qui pariatur cum incidunt corrupti, enim a animi quaerat. Sit?
+        </p>
+        <p class="ellipsis">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+            aperiam obcaecati vitae ea atque neque dolores impedit alias porro
+            sequi qui pariatur cum incidunt corrupti, enim a animi quaerat. Sit?
+        </p>
+        <p class="multi-ellipsis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            perspiciatis, quod atque, ipsa nihil, unde necessitatibus possimus
+            saepe nesciunt soluta suscipit reiciendis a rem eveniet totam facere
+            consequuntur quo odit.
+        </p>
+    </body>
+</html>

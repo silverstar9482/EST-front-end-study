@@ -1,0 +1,7 @@
+/* at-rule 문법 */
+@import url("reset.css");
+@import url("font.css");
+
+p {
+    border: solid 5px black;
+}

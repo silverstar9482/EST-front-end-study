@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello World 출력하기</title>
+
+        <script src="./001.js"></script>
+    </head>
+    <body>
+        <h1>콘솔창 찍어보기 <span>HELLO, WORLD</span></h1>
+        <h1>
+            나는 두번째 H1 이야
+            <div class="b">second h1</div>
+        </h1>
+
+        <script src="./001-b.js"></script>
+        <script>
+            console.log("003");
+            // Elements = 태그를 가르킴.
+            // 자바스크립트는 무조건 0번째 부터 시작.
+            console.log(document.getElementsByTagName("h1"));
+
+            console.log(document.getElementsByTagName("h1")[0]);
+            console.log(document.getElementsByTagName("h1")[0].textContent);
+            console.log(document.getElementsByTagName("h1")[0].innerHTML);
+
+            console.log(document.getElementsByTagName("h1")[1].textContent);
+            console.log(document.getElementsByTagName("h1")[1].innerHTML);
+        </script>
+    </body>
+</html>
+[]

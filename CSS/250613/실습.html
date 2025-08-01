@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+            @import url("https://fonts.googleapis.com/css2?family=Dongle&family=Grandiflora+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont,
+                    "Apple SD Gothic Neo", "Pretendard Variable", Pretendard,
+                    Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic",
+                    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+                    sans-serif;
+            }
+
+            .card {
+                width: 500px;
+                height: 700px;
+                margin: 25% auto 0;
+                perspective: 1000px;
+                transform-origin: center;
+                transition: all 2s;
+                transform-style: preserve-3d;
+            }
+            /* card 뒷면 */
+            .card-back {
+                width: 500px;
+                height: 700px;
+                background-color: #000;
+                border-radius: 20px;
+                position: absolute;
+                top: 0;
+                transform: translate(0%, 0);
+                transform: rotateY(180deg);
+                backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card-back h2 {
+                width: 100%;
+                font-family: "Montserrat", sans-serif;
+                font-size: 2.5em;
+                font-weight: 600;
+                color: #fff;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .card-back p {
+                width: 100%;
+                color: #fff;
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 1;
+                text-align: center;
+            }
+
+            /* card 앞면 */
+            .card-front {
+                width: 500px;
+                height: 700px;
+                background-color: #fff;
+                border-radius: 20px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                border: 3px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            .card-front span:first-child {
+                display: inline-block;
+                width: 100%;
+                background-color: #000;
+                height: 30px;
+                border-radius: 20px 20px 0 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .card-front span:nth-child(2) {
+                display: inline-block;
+                background-color: #000;
+                width: 100%;
+                height: 30px;
+                border-radius: 0 0 20px 20px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            .card-front h2 {
+                font-family: "Montserrat", sans-serif;
+                font-size: 2em;
+                font-weight: 600;
+                letter-spacing: -0.05em;
+                text-align: left;
+                /* color: #555; */
+                position: absolute;
+                top: 9%;
+                left: 7%;
+            }
+            .card-front h2::after {
+                content: "";
+                background: url("./QR_code.svg") no-repeat center center/ cover;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 143%;
+                transform: translateY(-10%);
+            }
+
+            .card-front .picture {
+                width: 350px;
+                height: 350px;
+                background: url("../../250523/윙크하는\ 라떼.jpeg") no-repeat
+                    center center/ cover;
+                border-radius: 100%;
+                position: absolute;
+                top:140px;
+                /* top: 20%; */
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .card-front p {
+                width: 100%;
+                position: relative;
+                position: absolute;
+                bottom: 9%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 1.4rem;
+                line-height: 1.4;
+                text-align: center;
+            }
+            .card-front p::before {
+                content: "🐱";
+                width: 100%;
+                font-size: 2rem;
+                position: absolute;
+                top: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            /* hover 효과 */
+
+            .card:hover {
+                transform: rotateY(180deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="card-front">
+                <span></span>
+                <span></span>
+                <h2>LATTER FACTORY</h2>
+                <div class="picture"></div>
+                <p>
+                    안녕하세요 <br />
+                    프론트엔드 개발자 조라떼입니다.
+                </p>
+            </div>
+            <div class="card-back">
+                <h2>LATTER FACTORY</h2>
+                <p>"오늘저녁은 무엇을 먹을까?"</p>
+            </div>
+        </div>
+    </body>
+</html>

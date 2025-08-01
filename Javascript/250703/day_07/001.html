@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/dom.css" />
+
+        <style>
+            .btn {
+                background-color: #e8e8e8;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="all-container">
+            <div class="menu-container">
+                <button class="btn">
+                    <img src="./images/irangi_01.png" alt="irangi" />
+                </button>
+                <button class="btn">
+                    <img src="./images/irangi_02.png" alt="irangi" />
+                </button>
+                <button class="btn">
+                    <img src="./images/irangi_03.png" alt="irangi" />
+                </button>
+            </div>
+        </div>
+
+        <ul id="list">
+            <li>Apple</li>
+            <li>Mango</li>
+            <li>Banana</li>
+        </ul>
+        <!-- 
+        ul에 클릭이벤트를 추가하여, 현재 클릭된 요소의 컨텐츠가 콘솔에 찍히도록 처리.
+        -->
+
+        <p id="p">
+            Hello world
+            <span>SPAN</span>
+            <strong>STRONG</strong>
+        </p>
+
+        <div id="testBox">
+            <strong>STRONG</strong>
+            <em>EM</em>
+            <p>Paragraph</p>
+        </div>
+
+        <!-- testBox에 클릭이벤트가 발생하면, 그 타겟이 EM 일때만 콘솔에 '클릭'을 출력 -->
+
+        <script>
+            const menu = document.querySelector(".menu-container");
+            const p = document.getElementById("p");
+            const div = document.querySelector("#testBox");
+
+            // 첫번째 버튼에 클릭하면, 콘솔에 '첫번째 버튼입니다' 출력
+            // menu.addEventListener("click", function (e) {
+            //     // target - 이벤트가 일어난곳
+            //     // currentTarget, this - 이벤트리스너를 단 곳
+            //     console.log(e.target.nodeName);
+            // });
+
+            function doSomething(e) {
+                const isTarget = e.target.nodeName === "STRONG";
+                if (isTarget) {
+                    console.log("That's Strong");
+                }
+            }
+
+            p.addEventListener("click", doSomething);
+
+            function testBox(e) {
+                if (e.target.nodeName === "EM") {
+                    console.log("클릭");
+                }
+            }
+            div.addEventListener("click", testBox);
+
+            function menuHandler(e) {
+                if (e.target.nodeName === "BUTTON") {
+                    const contents = e.target.innerHTML;
+                    alert(contents);
+                }
+            }
+
+            menu.addEventListener("click", menuHandler);
+
+            const ul = document.querySelector("#list");
+            ul.addEventListener("click", function (e) {
+                console.log(e.target.textContent);
+            });
+            // tagName - HTML
+            // nodeName - 모든요소 텍스트까지 가져옴
+        </script>
+    </body>
+</html>

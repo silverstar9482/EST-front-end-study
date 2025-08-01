@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .container {
+                width: 600px;
+                height: 600px;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+
+                /* grid-template-area로 영역을 정의하고, grid-area로 아이템을 배치할 수 있음. */
+                /* 한줄에 5칸만큼 배치시키길 원하면 영역이름도 똑같이 5칸 입력해준다. */
+                grid-template-areas:
+                    "header header header header header"
+                    "section1 section1 section1 section1 aside"
+                    "section2 section2 section3 section3 aside"
+                    "section2 section2 section3 section3 aside"
+                    "footer footer footer footer footer";
+            }
+
+            .item1 {
+                background-color: lightcoral;
+
+                /* grid-area에 header이름을 입력하면 header가 5개 입력한 칸만큼 차지하게됌. */
+                grid-area: header;
+            }
+
+            .item2 {
+                background-color: rgb(231, 240, 128);
+                grid-area: section1;
+            }
+
+            .item3 {
+                background-color: rgb(186, 240, 128);
+                grid-area: section2;
+            }
+
+            .item4 {
+                background-color: rgb(128, 236, 240);
+                grid-area: section3;
+            }
+
+            .item5 {
+                background-color: rgb(148, 128, 240);
+                grid-area: aside;
+            }
+
+            .item6 {
+                background-color: rgb(240, 128, 238);
+                grid-area: footer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">item1</div>
+            <div class="item2">item2</div>
+            <div class="item3">item3</div>
+            <div class="item4">item4</div>
+            <div class="item5">item5</div>
+            <div class="item6">item6</div>
+        </div>
+    </body>
+</html>

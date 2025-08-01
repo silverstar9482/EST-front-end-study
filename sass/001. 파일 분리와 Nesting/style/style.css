@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* 여러줄 주석은 볼 수 있습니다. */
+nav {
+  background: #c39bd3;
+  padding: 10px;
+  height: 50px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+}
+nav ul li {
+  color: white;
+  margin-right: 10px;
+}
+
+.background-img {
+  width: 100%;
+  height: auto;
+  background-image: url("./sample.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transition: all 1s;
+}
+.box:hover {
+  background-color: blue;
+}
+
+.one {
+  color: green;
+}
+.one .two {
+  color: rosybrown;
+}
+.one .two .three {
+  color: blue;
+}
+p {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

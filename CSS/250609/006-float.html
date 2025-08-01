@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                border: 3px solid black;
+                /* height: 300px; */
+                overflow: hidden;
+            }
+
+            .container::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            img {
+                width: 100px;
+                float: left;
+            }
+            h2 {
+                float: right;
+            }
+            p {
+                /* clear: right;
+                clear: left; */
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>hello</h2>
+            <img src="./img/weniv-binky.png" alt="" />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae sapiente voluptatem reiciendis consequatur molestias
+                deserunt aliquam doloribus error maiores veritatis, officia
+                ipsam dolorem quidem delectus quaerat modi ducimus debitis non!
+            </p>
+        </div>
+    </body>
+</html>

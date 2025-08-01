@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 버튼 3개 '가위', '바위', '보' -->
+        <button type="button" onclick="playGame('가위')">가위</button>
+        <button type="button" onclick="playGame('바위')">바위</button>
+        <button type="button" onclick="playGame('보')">보</button>
+
+        <!-- 연습버튼 함수호출 -->
+        <button type="button" onclick="inputCoin(1000,3);">
+            동전기계 출력하기
+        </button>
+
+        <p id="result"></p>
+
+        <script>
+            function inputCoin(coin) {
+                console.log(`${coin}원 동전이 입금되었습니다.`);
+            }
+            function inputCoin(coin, count = 1) {
+                console.log(`${coin}원 동전이 ${count}개 입금되었습니다.`);
+            }
+            function inputCoin(coin, count = 1) {
+                return `당신은 ${coin * count}원을 입금하셨습니다.`;
+            }
+
+            // 호출할 때
+            inputCoin(500, 3); // 500
+            inputCoin(100, 2); // 100
+            inputCoin(50, 2); // 50
+
+            const user1 = inputCoin(1000, 5);
+            console.log(user1);
+
+            /* 당신은 1500원을 입금하셨습니다. */
+            const user2 = 1000;
+            console.log(user2, 5);
+
+            // 각각의 버튼을 클릭했을떄에 '가위', '바위', '보'라는 각각의 텍스트를 콘솔에 출력하시오.
+
+            // function playGame(game) {
+            //     console.log(game);
+            // }
+
+            // aiChoice === userChoice '비겼습니다' -> 같지않다면(이기거나, 졌습니다)
+
+            const rsp = ["가위", "바위", "보"];
+            const result = document.getElementById("result");
+
+            function playGame(userChoice) {
+                const aiChoice = rsp[Math.floor(Math.random() * rsp.length)];
+                // const aiChoice = /* 랜덤수 : rsp[0] 또는 rsp[1] 또는 rsp[2] */;
+
+                // 출력 결과 메세지
+                let message = "";
+
+                const userWin =
+                    (userChoice === "가위" && aiChoice === "보") ||
+                    (userChoice === "바위" && aiChoice === "가위") ||
+                    (userChoice === "보" && aiChoice === "바위");
+
+                if (aiChoice === userChoice) {
+                    message = "비겼습니다.";
+                } else if (userWin) {
+                    message = "사용자가 이겼습니다.";
+                } else {
+                    message = "사용자가 졌습니다.";
+                }
+
+                result.textContent = `게임결과 : ${message}`;
+            }
+
+            console.clear();
+        </script>
+    </body>
+</html>

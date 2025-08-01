@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            /* 타입에 관계없이 자손 요소 중 위치 기반으로 선택 */
+            div :nth-child(1) {
+                color: red;
+            }
+
+            /* 짝수 요소 선택 */
+            div :nth-child(even) {
+                border: solid 2px brown;
+            }
+            div :nth-child(2n) {
+                background-color: aquamarine;
+            }
+            /* div :nth-child(odd) {
+                background-color: cornflowerblue;
+            } */
+            div :nth-child(2n + 1) {
+                background-color: cornflowerblue;
+            }
+            div :nth-child(-n + 3) {
+                font-size: 32px;
+            }
+
+            /* 타입 상관없이 위치기반으로 선택 */
+            div :nth-child(3) {
+                background-color: crimson;
+            }
+
+            /* 형제요소 중 동일한 타입 요소 사이 위치 기반으로 선택 */
+            div p:nth-of-type(3) {
+                background-color: cadetblue;
+            }
+
+            /* 형제 요소 중 유일하게 사용된 태그를 선택 */
+            div :only-of-type {
+                color: blueviolet;
+            }
+
+            /* 특정 선택자를 제외한 요소를 선택 */
+            ul li:not(:first-child) {
+                color: chocolate;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>첫 번째 문단</p>
+            <h2>첫 번째 제목</h2>
+            <p>두번째 문단</p>
+            <p>세번째 문단</p>
+            <span>Lorem, ipsum dolor sit amet</span>
+        </div>
+
+        <ul>
+            <li>1번째 항목</li>
+            <li>2번째 항목</li>
+            <li>3번째 항목</li>
+            <li>4번째 항목</li>
+            <li>5번째 항목</li>
+        </ul>
+    </body>
+</html>

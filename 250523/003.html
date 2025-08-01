@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            div {
+                border: 1px solid black;
+            }
+            span {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>hello</p>
+            <p>world</p>
+            <p>zeezee</p>
+        </div>
+        <p>
+            Lorem ipsum <span>dolor</span> <mark>sit</mark> amet consectetur
+            adipisicing elit. Dolorem incidunt eveniet culpa modi nesciunt eum
+            atque adipisci aliquam sit, quia delectus, excepturi fuga nihil
+            omnis aut magnam, expedita totam necessitatibus.
+        </p>
+
+        <div class="block">div</div>
+        <div class="block">div</div>
+        <div class="block">div</div>
+        <!-- 아래와 같이 사용할 수 없음 -->
+        <!-- <span><div></div></span> -->
+        <!-- 아래와 같이 사용가능 -->
+        <!-- <div><span></span></div> -->
+        <!-- a 태그는 예외적으로 내부에 블록 요소 중첩 가능 -->
+        <!-- <a href="#"><div></div></a> -->
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <button>button</button>
+        <button>button</button>
+        <button>button</button>
+        <button>button</button>
+    </body>
+</html>

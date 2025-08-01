@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            div.con1 {
+                margin-bottom: 30px;
+            }
+            .btn {
+                text-align: center;
+                width: 100px;
+                height: 35px;
+                font-weight: 700;
+                background-color: #343f50;
+                box-sizing: border-box;
+            }
+            .nomal {
+                color: #cbd5df;
+                border: 1px solid #1a202c;
+                box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1);
+            }
+            .nomal:hover {
+                border: 1px solid #1a202c;
+                text-decoration: underline;
+                color: #fff;
+                box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            .nomal:active {
+                color: #fff;
+                box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.2);
+            }
+            .nomal:disabled {
+                color: #4a5568;
+                box-shadow: none;
+                text-decoration: none;
+            }
+
+            .positive {
+                background-color: #343f50;
+                border: 1px solid #1a202c;
+                box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1);
+                color: #439aff;
+            }
+            .positive:hover {
+                text-decoration: underline;
+                background-color: #439aff;
+                border: 1px solid #439aff;
+                color: #fff;
+                box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            .positive:active {
+                color: #fff;
+                box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            .negative {
+                background-color: #343f50;
+                border: 1px solid #1a202c;
+                box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1);
+                color: #eb5757;
+            }
+            .negative:hover {
+                background-color: #eb5757;
+                border: 1px solid #eb5757;
+                color: #fff;
+                text-decoration: underline;
+                box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            .negative:active {
+                color: #fff;
+                box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            /* ---------------------------------------------- */
+
+            .con2 button {
+                width: 100px;
+                height: 50px;
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .btn1 {
+                color: #fff;
+                background-color: #4a5568;
+                border: 5px solid #000;
+                box-shadow: inset 5px 5px 0 rgba(255, 255, 255, 0.3);
+            }
+
+            .btn2 {
+                border: 5px dashed #d5d5d5;
+                border-radius: 100px;
+                background: linear-gradient(
+                    90deg,
+                    rgba(121, 42, 155, 1) 0%,
+                    rgba(83, 139, 237, 1) 100%
+                );
+                background-clip: padding-box;
+                color: #fff;
+            }
+
+            .btn3 {
+                border: 2px solid rgb(176, 196, 222);
+                border-radius: 0 100px 100px 100px;
+                background-color: #fff;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="con1">
+            <button type="button" class="btn nomal">Button</button>
+            <button type="button" class="btn nomal" disabled>Button</button>
+            <button type="submit" class="btn positive">Yes</button>
+            <button type="reset" class="btn negative">Del</button>
+        </div>
+
+        <div class="con2">
+            <button class="btn1">Hello👋</button>
+            <button class="btn2">Hello👋</button>
+            <button class="btn3">Hello👋</button>
+        </div>
+    </body>
+</html>

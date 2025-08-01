@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>다양한 html 태그들</title>
+    </head>
+    <body>
+        <!-- 0 ~ 100 사이 범위에서 70의 값 -->
+        <p>
+            디스크 사용량:
+            <!-- 내부컨텐츠는 접근성을 위해 작성(ex.스크린리더기) -->
+            <meter value="70" min="0" max="100">70%</meter>
+        </p>
+
+        <p>저장 공간: <meter value="6" min="0" max="10">6GB/10GB</meter></p>
+        <!-- 10GB 중 6GB가 사용되었음 -->
+
+        <p>
+            배터리 상태:
+            <meter
+                value="0.7"
+                min="0"
+                max="1"
+                low="0.3"
+                high="0.7"
+                optimum="0.8"
+            >
+                <!-- optimum은 사용자에게 이 수치가 좋은건지 나쁜건지 알려줄때 쓰는 속성 -->
+                20%
+            </meter>
+        </p>
+        <!-- meter 태그는 값에 따라 색상이 자동으로 변합니다. low, high, optimum 속성을 사용하면 이 색상 변화를 제어할 수 있습니다: -->
+
+        <label for="file">파일 업로드 진행상황:</label>
+        <progress id="file" value="52" max="100">52%</progress>
+        <p>데이터 로드 중... <progress></progress></p>
+
+        <h2>작업 진행 상황</h2>
+        <progress id="progressBar" value="0" max="100"></progress>
+        <p id="progressText">0%</p>
+        <button onclick="incrementProgress()">진행</button> <br />
+
+        <button id="showDialogBtn">모달 열기</button>
+
+        <dialog id="myDialog">
+            <p>만나서 반가워요!</p>
+            <button id="closeBtn">모달 닫기</button>
+        </dialog>
+
+        <script>
+            // 작업진행상황 스크립트
+            function incrementProgress() {
+                var progressBar = document.getElementById("progressBar");
+                var progressText = document.getElementById("progressText");
+
+                if (progressBar.value < 100) {
+                    progressBar.value += 10;
+                    progressText.textContent = progressBar.value + "%";
+                }
+
+                if (progressBar.value >= 100) {
+                    alert("완료!");
+                }
+            }
+
+            // 모달열기 스크립트
+            const dialog = document.getElementById("myDialog");
+            const showDialogBtn = document.getElementById("showDialogBtn");
+            const closeBtn = document.getElementById("closeBtn");
+
+            showDialogBtn.addEventListener("click", () => {
+                dialog.showModal();
+                console.log("FE 짱짱");
+            });
+
+            closeBtn.addEventListener("click", () => {
+                dialog.close();
+            });
+        </script>
+    </body>
+</html>

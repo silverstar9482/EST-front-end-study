@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            /* 두 개 이상의 애니메이션 중간 상태를 설정 */
+            /* 0%는 시작점, 100%는 종료 시점을 의미하며, from과 to로도 표현 */
+            @keyframes move-box {
+                0% {
+                    transform: translate(0, 0);
+                    background-color: red;
+                }
+                100% {
+                    transform: translate(300px, 0);
+                    background-color: greenyellow;
+                }
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: lavender;
+
+                /* 애니메이션의 이름을 지정합니다.
+                이름은 영문 소문자, 문자열, 언더바(_), 하이픈(-)으로 시작 */
+                animation-name: move-box;
+
+                /* 시간을 지정해주지 않으면 효과적용 안됌(음수값도 안됌) */
+                animation-duration: 3s;
+
+                /* 애니메이션의 진행 속도를 제어하는 속성 */
+                animation-timing-function: ease; /* 기본값. 애니메이션이 중간에 빨라졌다 끝에서 느려지는 자연스러운 움직임을 만듬. */
+                animation-timing-function: linear; /* 애니메이션이 일정한 속도로 진행 */
+                animation-timing-function: cubic-bezier(
+                    0.83,
+                    -0.45,
+                    0,
+                    1.52
+                ); /* 복잡한 속도 변화를 가능 */
+                animation-timing-function: steps(
+                    6
+                ); /* 애니메이션 n개의 단계로 나뉘어 진행 */
+
+                /* 애니메이션 시작 시점을 지정. 지정된 시간 후에 애니메이션이 시작 */
+                /* animation-delay: 2s;
+                animation-delay: -2s; */
+
+                /* 애니메이션 재생 횟수를 설정 */
+                /* animation-iteration-count: 2; */ /* 2번 재생 */
+                /* animation-iteration-count: infinite; */ /* infinite로 설정하면 애니메이션이 무한히 반복 */
+
+                /* 애니메이션의 재생 방향을 지정 */
+                /* animation-direction: reverse; */ /* 역방향으로 재생 */
+                /* animation-direction: alternate; */ /* 정방향과 역방향을 번갈아가며 재생 */
+                /* animation-direction: alternate-reverse; */ /* 역방향과 정방향을 번갈아가며 재생 */
+
+                /* 애니메이션 실행 전과 후에 대상에 스타일을 적용하는 방법을 지정 */
+                animation-fill-mode: forwards; /* 애니메이션이 끝난 후 마지막 키프레임의 스타일을 유지 */
+                animation-fill-mode: backwards; /* 애니메이션이 시작되기 전에 첫 번째 키프레임의 스타일을 적용 */
+                animation-fill-mode: both; /* forwards와 backwards를 모두 지정해주고 싶을때 씀 */
+            }
+
+            .box:hover {
+                /* 애니메이션의 재생 상태를 설정 */
+                animation-play-state: paused; /* 애니메이션을 일시 정지 */
+                animation-play-state: running; /* 애니메이션을 재생 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            body {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            /* --- grid ---------------------------------------------------------*/
+            .grid-container {
+                display: grid;
+                background-color: black;
+                gap: 10px;
+                padding: 10px;
+                grid-template-columns: repeat(1, 2fr 1fr);
+                box-sizing: border-box;
+                font-size: 32px;
+
+                grid-template-rows: 1fr 5fr 1fr;
+            }
+            .grid-container .item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                background-color: lightpink;
+            }
+
+            .grid-container .one {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+
+            /* --- flex ---------------------------------------------------------*/
+            .flex-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                font-size: 32px;
+                background-color: black;
+                box-sizing: border-box;
+                margin-left: 30px;
+            }
+            .flex-container .item {
+                background-color: lightgreen;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="item one">header</header>
+            <section class="item">section</section>
+            <aside class="item">astide</aside>
+            <footer class="item one">footer</footer>
+        </div>
+
+        <div class="flex-container">
+            <header class="item">header</header>
+            <div class="item-wrap">
+                <section class="item">section</section>
+                <aside class="item">astide</aside>
+            </div>
+            <footer class="item">footer</footer>
+        </div>
+    </body>
+</html>

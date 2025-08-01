@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM traversing</title>
+    </head>
+    <body>
+        <div class="box" id="parent">
+            <p>First child</p>
+            <button name="btn">클릭하세요</button>
+            <p>Third child</p>
+        </div>
+
+        <p id="output"></p>
+        <script>
+            const parent = document.getElementById("parent");
+            parent.addEventListener("click", (e) => {
+                const target = e.target;
+                console.log(target.parentElement);
+                console.log(target.closest("div")); // 가장 가까운(closest) 상위 조상 요소를 찾아서 반환
+                console.log(target.nextElementSibling);
+                console.log(target.children);
+                console.log(target.remove());
+                // console.log(output.textContent = `
+                // 부모 : ${target.parenElement},
+                // 첫번째 자식요소 : ${target.firstElementChild},
+                // 다음 형제 : ${target.nextElementSibling},
+                // 이전 형제 : ${target.previousElementSibling},
+                // 가장가까운 div요소 : ${target.closest("div")},
+                // `)
+            });
+        </script>
+    </body>
+</html>

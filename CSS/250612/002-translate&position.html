@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .container {
+                display: flex;
+                gap: 100px;
+                padding: 100px;
+            }
+
+            .box {
+                width: 100px;
+                border: 2px solid black;
+                position: relative;
+            }
+
+            .box > div {
+                width: 100px;
+                height: 100px;
+                background-color: lightcoral;
+                opacity: 0.7;
+                transition: all 1s;
+            }
+
+            .box > .item {
+                background-color: lightseagreen;
+            }
+
+            /* 
+            ** translate 사용 권장하는 경우 **
+            - 애니메이션이나 빈번한 위치 변경이 필요할 때
+            - 성능이 중요한 상황 (예: 모바일 환경)
+            - 다른 요소의 레이아웃에 영향을 주지 않아야 할 때
+            */
+            .translate-item:hover {
+                transform: translateY(100px);
+            }
+
+            /* 
+            ** position 사용 권장하는 경우 **
+            - 정적인 레이아웃 구성 시
+            - 요소의 위치 변경이 다른 요소의 레이아웃에 영향을 줘야 할 때
+            - 복잡한 레이아웃 구조에서 요소를 배치할 때
+            */
+            .position-item:hover {
+                position: absolute;
+                top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="translate-item">translate</div>
+                <div class="item">item</div>
+            </div>
+            <div class="box">
+                <div class="position-item">position</div>
+                <div class="item">item</div>
+            </div>
+        </div>
+    </body>
+</html>

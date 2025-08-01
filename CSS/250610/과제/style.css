@@ -1,0 +1,370 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+:root {
+    --main-color: #2f80ed;
+    --sub-color: #767676;
+    --line-color: #c4c4c4;
+}
+/* 공동 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 로그인 page */
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+main .login-con {
+    width: 500px;
+    height: 240px;
+    border: 1px solid var(--line-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.login-con h2 {
+    width: 138px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 28px;
+}
+.login-con h2 img {
+    width: 122px;
+    height: 24px;
+    object-fit: cover;
+}
+
+.login-con p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login-con button {
+    width: 440px;
+    height: 60px;
+    display: block;
+    background-color: var(--main-color);
+    /* border: none; */
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Modal창 */
+.modal {
+    width: 520px;
+    height: 712px;
+    border-radius: 10px;
+    border: 1px solid var(--line-color);
+    box-sizing: border-box;
+    background-color: #fff;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+
+    display: none;
+    z-index: 999;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 888;
+}
+
+.header {
+    position: relative;
+}
+.header fieldset {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 100%;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--line-color);
+    padding: 20px 0;
+}
+
+.header button {
+    width: 16px;
+    height: 16px;
+    font-size: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+
+    position: absolute;
+    top: 22px;
+    right: 24px;
+}
+
+/* button 닫기 버튼 만들기 */
+.header > button::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 22.4px;
+    background-color: var(--sub-color);
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.header > button::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 22.4px;
+    background-color: var(--sub-color);
+    transform: ;
+    /* border: 1px solid firebrick; */
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.memberlogin-con {
+    margin: 0 24px;
+}
+.memberlogin-con p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin: 26px 0 24px;
+}
+
+#userid {
+    width: 472px;
+    height: 50px;
+    border: 1px solid var(--line-color);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#userpw {
+    width: 472px;
+    height: 50px;
+    border: 1px solid var(--line-color);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+#userid::placeholder {
+    color: var(--sub-color);
+    padding: 15px 16px;
+    font-size: 16px;
+}
+#userpw::placeholder {
+    color: var(--sub-color);
+    padding: 15px 16px;
+    font-size: 16px;
+}
+
+/* 로그인 상태유지 체크박스 */
+input[type="checkbox"] {
+    display: none;
+}
+
+label[for="check"] {
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+/* check-off */
+input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-image: url(./images/check-off.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 8px;
+    vertical-align: middle;
+    transform: translateY(-15%);
+}
+
+/* check-on */
+input[type="checkbox"]:checked + label span {
+    background-image: url(./images/check-on.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-btn button {
+    width: 472px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #fff;
+    margin: 20px 0;
+}
+.login-btn .member-list {
+    text-align: center;
+}
+.login-btn .member-list a {
+    color: var(--sub-color);
+}
+.login-btn .member-list .join {
+    position: relative;
+    margin-right: 18px;
+}
+.login-btn .member-list .join::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: var(--sub-color);
+
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    transform: translateY(-45%);
+}
+
+.txt-line {
+    color: var(--sub-color);
+    text-align: center;
+    margin: 30px 24px 20px;
+    position: relative;
+}
+.txt-line::before {
+    content: "";
+    width: 210px;
+    height: 1px;
+    background-color: var(--sub-color);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.txt-line::after {
+    content: "";
+    width: 210px;
+    height: 1px;
+    background-color: var(--sub-color);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.sns-btn {
+    margin: 0 24px 25px;
+}
+.sns-btn a {
+    display: flex;
+    width: 472px;
+    height: 50px;
+    border: 1px solid var(--sub-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--sub-color);
+    position: relative;
+}
+
+.sns-btn .facebook-login {
+    border-color: #2d9cdb;
+}
+.sns-btn .naver-login {
+    border-color: #00bf18;
+}
+.sns-btn .kakao-login {
+    border-color: #f2c94c;
+    margin-bottom: 0;
+}
+
+.sns-btn .google-login::before {
+    content: url("./images/Google__G__Logo\ 1.png");
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sns-btn .facebook-login::before {
+    content: url("./images/facebook.png");
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sns-btn .naver-login::before {
+    content: url("./images/naver-logo.png");
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sns-btn .kakao-login::before {
+    content: url("./images/message-circle.png");
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .relative {
+                position: relative;
+                top: 20px;
+                left: 20px;
+                border: solid 3px palevioletred;
+            }
+            .nomal {
+                background-color: lightgreen;
+            }
+
+            .absolute {
+                background-color: lightskyblue;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+
+            .fixed {
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: lightseagreen;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .sticky {
+                height: 50px;
+                background-color: lightgoldenrodyellow;
+                position: sticky;
+                top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="relative">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sed
+            maiores unde inventore, possimus fugit corporis obcaecati nesciunt
+            eveniet nobis asperiores placeat veniam, laudantium soluta
+            perferendis dicta molestias molestiae ullam. Lorem ipsum dolor sit,
+            <div class="sticky">sticky</div>
+            amet consectetur adipisicing elit. Quasi nesciunt asperiores aliquid
+            commodi facilis quas repudiandae unde dolorem eveniet! Perferendis
+            voluptates accusamus quis eos hic quam officia exercitationem
+            placeat atque. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Unde possimus quibusdam illo aperiam, ipsa, eum quisquam
+            voluptatibus tempora officia autem corporis nostrum doloribus neque.
+            Facilis vitae nam necessitatibus voluptatibus assumenda.
+            <div class="absolute">absolute</div>
+        </div>
+        <div class="nomal">normal flow</div>
+        <div class="fixed">fixed</div>
+    </body>
+</html>

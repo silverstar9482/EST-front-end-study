@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>위니브 로그인</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="login-con">
+                <h2><img src="./images/Group.png" alt="weniv logo" /></h2>
+                <p>위니브를 더 즐겁고 편리하게 이용하세요.</p>
+                <button type="button" id="loginModalbtn">로그인</button>
+            </div>
+        </main>
+
+        <section>
+            <div class="modal-overlay" id="modalOverlay"></div>
+
+            <article class="modal" id="modal">
+                <form action="" method="post">
+                    <div class="header clearfix">
+                        <fieldset>로그인 또는 회원가입</fieldset>
+
+                        <button type="button" id="closeBtn">닫기</button>
+                    </div>
+
+                    <div class="memberlogin-con">
+                        <p>위니브에서 여러분의 궁금증을 해결하세요! :&rbbrk;</p>
+
+                        <label for="userid"></label>
+                        <input
+                            type="text"
+                            id="userid"
+                            name="userid"
+                            placeholder="아이디"
+                            required
+                        />
+                        <label for="userpw"></label>
+                        <input
+                            type="password"
+                            id="userpw"
+                            name="userpw"
+                            placeholder="비밀번호"
+                            required
+                        />
+
+                        <input type="checkbox" id="check" />
+                        <label for="check"><span></span>로그인 상태 유지</label>
+
+                        <div class="login-btn">
+                            <button type="button">로그인</button>
+                            <div class="member-list">
+                                <a href="#" class="join">회원가입</a>
+                                <a href="#" class="find"
+                                    >아이디/비밀번호 찾기</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="txt-line">또는</p>
+
+                    <div class="sns-btn">
+                        <a href="#" class="google-login"
+                            >구글 계정으로 로그인</a
+                        >
+                        <a href="#" class="facebook-login"
+                            >페이스북 계정으로 로그인</a
+                        >
+                        <a href="#" class="naver-login"
+                            >네이버 계정으로 로그인</a
+                        >
+                        <a href="#" class="kakao-login"
+                            >카카오톡 계정으로 로그인</a
+                        >
+                    </div>
+                </form>
+            </article>
+
+            <script>
+                const modal = document.getElementById("modal");
+                const showModalBtn = document.getElementById("loginModalbtn");
+                const closeBtn = document.getElementById("closeBtn");
+                const modalOverlay = document.getElementById("modalOverlay");
+
+                showModalBtn.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                    modalOverlay.style.display = "block";
+                });
+
+                closeBtn.addEventListener("click", () => {
+                    modal.style.display = "none";
+                    modalOverlay.style.display = "none";
+                });
+            </script>
+        </section>
+    </body>
+</html>

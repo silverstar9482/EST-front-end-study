@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello, JavaScript</title>
+    </head>
+    <body>
+        <h1>Javascript Console</h1>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>SCSS</li>
+        </ul>
+
+        <script>
+            // 3가지 - var, let, const 키워드
+            // 코드를 지저분하지않게 쓰기위해 변수를 써주어 간략하게 입력함.
+            const li = document.getElementsByTagName("li");
+
+            console.log(li[2].textContent);
+            // = '대입연산자'
+            li[2].textContent = "자바스크립트<button>버튼</button>";
+            console.log(li[2].textContent);
+
+            console.log(li[2].innerHTML);
+        </script>
+    </body>
+</html>

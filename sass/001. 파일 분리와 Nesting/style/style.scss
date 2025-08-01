@@ -1,0 +1,53 @@
+/* 여러줄 주석은 볼 수 있습니다. */
+// 한 줄 주석은 볼 수 없습니다.
+// ex-1
+nav {
+    background: #c39bd3;
+    padding: 10px;
+    height: 50px;
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: flex-end;
+        li {
+            color: white;
+            margin-right: 10px;
+        }
+    }
+}
+
+// ex-2
+.background-img {
+    width: 100%;
+    height: auto;
+    background : {
+        image: url("./sample.jpg");
+        position: center center;
+        repeat: no-repeat;
+    }
+}
+
+// ex-3
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transition: all 1s;
+    &:hover {
+        background-color: blue;
+    }
+}
+
+// ex-4
+.one {
+    color: green;
+    .two {
+        color: rosybrown;
+        .three {
+            color: blue;
+            @at-root p {
+                color: red;
+            }
+        }
+    }
+}

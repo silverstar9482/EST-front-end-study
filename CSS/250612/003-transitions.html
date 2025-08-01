@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .item {
+                width: 100px;
+                height: 100px;
+                background-color: lightgreen;
+                margin: 50px;
+            }
+
+            .item:hover {
+                background-color: lightcoral;
+                transform: scale(1.5);
+                font-size: 3em;
+
+                /* 완료되는 데 걸리는 시간을 설정 */
+                /* 시간 단위로 초(s) 또는 밀리초(ms)를 사용 */
+                /* 시간을 지정해주지 않으면 효과적용 안됌 */
+                transition-duration: 3s;
+
+                /* 전환 효과를 적용할 CSS 속성을 지정 */
+                transition-property: background-color;
+                /* 특정된걸 지정되게 하는 것보다 all을 써서 전체 지정해서 효과를 줌 */
+                transition-property: all;
+
+                /* transition의 진행 속도를 설정 */
+                transition-timing-function: ease-in-out;
+
+                /* cubic bezier 곡선은 부드러운 곡선을 모델링하기 위해 컴퓨터 그래픽에서 널리 사용되는 방법 */
+                /* 4개의 컨트롤 포인트를 사용해 transition의 시작부터 끝까지의 효과를 제어 */
+                transition-timing-function: cubic-bezier(0.83, -0.45, 0, 1.52);
+
+                /* 함수는 변화의 단계를 설정, 각 단계의 끝 부분 또는 시작 부분에서 발생 */
+                transition-timing-function: steps(8);
+
+                /* 시작을 지연시키는 시간을 설정 */
+                /* 양수 값은 지정된 시간 후에 시작하며, 음수 값은 이미 진행 중인 것처럼 시작 */
+                transition-delay: 2s;
+                transition-delay: -2s;
+
+                /* transition 단축 속성 - 순서는 property, duration, timing-function, delay */
+                /* transition : property, duration, timing-function, delay */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="item">item</div>
+    </body>
+</html>

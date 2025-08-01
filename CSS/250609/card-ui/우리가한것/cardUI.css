@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+        format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: "Pretendard-Regular";
+}
+body {
+    background-color: #f5f5f5;
+}
+
+.container1 {
+    background-color: white;
+    width: 288px;
+    /* height: 348px; */
+    top: 46px;
+    left: 63px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-box {
+    width: 288px;
+    height: 196px;
+}
+
+.text-wrap {
+    margin: 20px 16px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #29363d;
+    margin-bottom: 16px;
+}
+p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #5a6a72;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 16px;
+}
+
+a {
+    color: #29363d;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 8%;
+}
+
+.container2 {
+    background-color: white;
+    width: 288px;
+    height: 348px;
+    top: 46px;
+    left: 63px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.thumbnail {
+    border: 1px solid red;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    float: left;
+}
+
+.title {
+    margin: 16px;
+    width: 100%;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+
+.title-wrap {
+    width: 200px;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    float: right;
+    margin-left: 16px;
+}
+
+.title-wrap > h2 {
+    /* border: 1px solid red; */
+    margin-bottom: 1px;
+}
+
+.title-wrap > p::after {
+    /* border: 1px solid blue; */
+    margin-bottom: none;
+}

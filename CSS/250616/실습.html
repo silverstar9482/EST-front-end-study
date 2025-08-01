@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="reset.css" />
+
+        <style>
+            @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Spoqa Han Sans Neo", "sans-serif";
+            }
+
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+
+            section {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                width: 1200px;
+                max-width: 1200px;
+                height: 580px;
+                display: grid;
+                gap: 102px;
+                margin: 240px 360px;
+                grid-template-columns: 1fr 486px;
+            }
+
+            .tit h2 {
+                font-weight: 700;
+                font-size: 70px;
+                line-height: 120%;
+                letter-spacing: -0.05rem;
+                vertical-align: middle;
+                color: rgba(rgba(18, 19, 20, 1));
+                margin-bottom: 20px;
+                word-break: keep-all;
+            }
+            .tit h2 span {
+                font-weight: 400;
+            }
+
+            .tit p {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                letter-spacing: 0%;
+                vertical-align: middle;
+                color: rgba(71, 73, 77, 1);
+                word-break: keep-all;
+            }
+            .tit p span {
+                font-weight: 700;
+            }
+
+            ul {
+                width: 100%;
+                display: grid;
+                gap: 20px;
+            }
+            ul li {
+                width: 100%;
+                height: 280px;
+                position: relative;
+                color: #fff;
+            }
+            ul li img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            ul li h4 {
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                vertical-align: middle;
+                position: absolute;
+                top: 40px;
+                left: 40px;
+            }
+            ul li a {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                vertical-align: middle;
+                position: absolute;
+                bottom: 30px;
+                right: calc(30px + 7.5px + 10.75px);
+            }
+            ul li a::after {
+                content: "";
+                width: 7.5px;
+                height: 13.5px;
+                display: block;
+                background: url("./img/Vector\ \(Stroke\).png") no-repeat 0 0 /
+                    cover;
+                position: absolute;
+                top: 50%;
+                right: -10.75px;
+                transform: translate(10.75px, -50%);
+            }
+
+            @media screen and (max-width: 768px) {
+                section {
+                    align-items: start;
+                }
+                .container {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 60px;
+                    margin: 100px 20px 0;
+                }
+
+                .container p {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+                ul {
+                    width: 100%;
+                    height: 198px;
+                    grid-template-columns: 344px 344px;
+                }
+                ul li {
+                    height: 100%;
+                }
+                ul li img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                ul li h4 {
+                    font-size: 24px;
+                    top: 30px;
+                    left: 30px;
+                }
+                ul li a {
+                    bottom: 20px;
+                    right: calc(20px + 7.5px + 10.75px);
+                }
+            }
+
+            @media screen and (max-width: 390px) {
+                .container {
+                    gap: 40px;
+                    margin: 100px 18px 0;
+                }
+
+                .container p {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+
+                ul {
+                    height: calc(205px + 205px + 14px);
+                    grid-template-columns: 356px;
+                    gap: 14px;
+                }
+                ul li {
+                    height: 205px;
+                }
+                .container h2 {
+                    font-size: 36px;
+                }
+                .container p {
+                    font-size: 14px;
+                }
+                ul li img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                ul li h4 {
+                    font-size: 20px;
+                }
+                ul li a {
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="container">
+                <div class="tit">
+                    <h2>
+                        <span>위니브에서</span><br />
+                        함께 콘텐츠 제작하실 분을 모십니다.
+                    </h2>
+                    <p>
+                        <span>위니브</span>는 ICT 연구 및 (코딩)교육 기관이며<br />
+                        다양한 사회 공헌 활동을 하고 있습니다.
+                    </p>
+                </div>
+
+                <div class="content-wrap">
+                    <h3 class="sr-only">모집분야</h3>
+                    <ul>
+                        <li>
+                            <img src="./img/Rectangle 2.png" alt="" />
+                            <div class="txt-wrap">
+                                <h4>IT 교육 영상 콘텐츠</h4>
+                                <a href="#">바로가기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./img/Rectangle 3.png" alt="" />
+                            <div class="txt-wrap">
+                                <h4>IT 서적</h4>
+                                <a href="#">바로가기</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

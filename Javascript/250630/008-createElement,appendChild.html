@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="ul"></ul>
+
+        <script>
+            const users = ["Daniel", "Don", "donald", "Micheal", "Juliet"];
+            const ul = document.getElementById("ul");
+
+            // const li = document.createElement("li");
+            // li.textContent = users[0];
+            // ul.appendChild(li);
+
+            users.forEach((user) => {
+                const li = document.createElement("li");
+                // createElement()- 지정된 태그 이름을 가진 HTML 요소를 생성하는 DOM 메서드
+                li.textContent = user;
+                ul.appendChild(li); // appendChild - 부모 자식에 자식 노드를 추가하는 메서드
+
+                const btn = document.createElement("button");
+                btn.textContent = "❌";
+                li.appendChild(btn);
+            });
+        </script>
+    </body>
+</html>

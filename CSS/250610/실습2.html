@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+            :root {
+                --main-color: #711bff;
+                --sub-color: #767676;
+            }
+            body {
+                font-family: "Spoqa Han Sans Neo", "sans-serif";
+            }
+
+            /* 공동속성 */
+            a {
+                text-decoration: none;
+                color: var(--sub-color);
+                display: block;
+            }
+            .clearfix::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            /* login */
+            section {
+                width: 350px;
+                /* height: 140px; */
+                border: 1px solid #dbdbdb;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+                margin: 50px auto 0;
+            }
+
+            .login-contents {
+                margin: 18px 16px;
+            }
+
+            h2 {
+                font-weight: 400;
+                font-size:12px;
+                margin-bottom: 16px;
+            }
+            button {
+                width: 318px;
+                height: 40px;
+                background-color: var(--main-color);
+                border: none;
+                border-radius: 4px;
+                color: #fff;
+                margin-bottom: 16px;
+                cursor: pointer;
+            }
+            button img {
+                width: 56.58px;
+                height: 10.8px;
+
+                object-fit: cover;
+            }
+
+            .login-list .find-member {
+                float: left;
+            }
+            .login-list .find-member::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                background-image: url(./img/icon-lock.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                transform: translateY(15%);
+                margin-right: 4px;
+            }
+            .find-member span::after {
+                content: "";
+                width: 1px;
+                height: 13px;
+                display: inline-block;
+                background-color: #767676;
+                vertical-align: middle;
+                margin: 0 2px 1px 6px;
+            }
+
+            .login-list .join-member {
+                float: right;
+            }
+            .login-list .join-member::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                background-image: url(./img/icon-user.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                transform: translateY(15%);
+                margin-right: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="login-contents">
+                <h2>더 편리해진 위니브에 오신 것을 환영합니다.</h2>
+                <button>
+                    <img src="./img/weniv-logo.png" alt="weniv" />
+                    로그인
+                </button>
+
+                <div class="login-list clearfix">
+                    <a href="#" class="find-member"
+                        ><span>아이디</span> 비밀번호찾기</a
+                    >
+                    <a href="#" class="join-member">회원가입</a>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

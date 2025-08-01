@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            P::before {
+                content: "오르미 6기 여러분 🙌";
+                color: coral;
+                font-size: 24px;
+            }
+            P::after {
+                content: "잘 부탁드립니다! 😁";
+            }
+
+            /* 아래 빈요소들은 가상요소 적용 불가 */
+            img::before,
+            br::before,
+            input::before {
+                content: "가상 요소 추가";
+            }
+
+            input::placeholder,
+            textarea::placeholder {
+                color: hotpink;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <strong>안녕하세요!</strong>
+        </p>
+
+        <br />
+        <img src="./누워있는-라떼.jpeg" alt="" />
+        <input type="text" placeholder="이름을 입력하세요." />
+        <textarea
+            name=""
+            id=""
+            placeholder="자기소개를 작성해주세요."
+        ></textarea>
+    </body>
+</html>

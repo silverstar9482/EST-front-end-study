@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>로그인 모달</title>
+
+        <style>
+            /* reset */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* 로그인 버튼 */
+            div.login-btn {
+                width: 100%;
+                text-align: center;
+                margin: 10% auto;
+            }
+            #loginDialogBtn {
+                width: 200px;
+                height: 50px;
+                border-radius: 10px;
+                border: 0;
+                background-color: #2e6ff2;
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            /* 모달창 */
+            dialog {
+                width: 600px;
+                margin: 15% auto;
+                border: 0;
+            }
+
+            #loginCloseBtn {
+                width: 20px;
+                background-color: transparent;
+                border: none;
+                border-radius: 5px;
+            }
+            #loginCloseBtn img {
+                display: inline-block;
+                width: 100%;
+                text-align: right;
+            }
+            #loginCloseBtn:active {
+                margin-right: 2px;
+                margin-bottom: 2px;
+                box-shadow: inset 1px 1px 2px rgb(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-btn">
+            <button id="loginDialogBtn">로그인</button>
+
+            <dialog id="memberDialog">
+                <button id="loginCloseBtn">
+                    <img src="./src/x.png" alt="닫기버튼" />
+                </button>
+                <form action="" method="dialog">
+                    <fieldset>
+                        <legend>로그인 또는 회원가입</legend>
+                        <p>위니브에서 여러분의 궁금증을 해결하세요</p>
+                        <div class="login-wrap">
+                            <label for="user-id">
+                                <input
+                                    type="text"
+                                    id="user-id"
+                                    name="user-id"
+                                    placeholder="아이디"
+                                    required
+                                />
+                            </label>
+                            <label for="user-pw">
+                                <input
+                                    type="password"
+                                    id="user-pw"
+                                    name="user-pw"
+                                    placeholder="비밀번호"
+                                    required
+                                />
+                            </label>
+                        </div>
+
+                        <input type="checkbox" id="login-Status" />
+                        <label for="login-Status">로그인 상태 유지</label>
+
+                        <button type="submit">로그인</button>
+
+                        <div>
+                            <a href="#">회원가입</a>
+                            <span>|</span>
+                            <a href="#">아이디/비밀번호 찾기</a>
+                        </div>
+                    </fieldset>
+
+                    <p>또는</p>
+
+                    <div class="snsMembership">
+                        <p class="sr-only">SNS으로 회원가입</p>
+
+                        <div>
+                            <a href="#">
+                                <img src="/google.png" alt="" />
+                                <span>구글 계정으로 로그인</span>
+                            </a>
+                            <a href="#">
+                                <img src="/facebook.png" alt="" />
+                                <span>페스이북로 로그인</span>
+                            </a>
+                            <a href="#">
+                                <img src="/naver.png" alt="" />
+                                <span>네이버로 로그인</span>
+                            </a>
+                            <a href="#">
+                                <img src="/kakaotalk.png" alt="" />
+                                <span>카카오톡으로 로그인</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+
+        <script>
+            const dialog = document.getElementById("memberDialog");
+            const showDialogBtn = document.getElementById("loginDialogBtn");
+            const closeBtn = document.getElementById("loginCloseBtn");
+
+            showDialogBtn.addEventListener("click", () => {
+                dialog.showModal();
+            });
+
+            closeBtn.addEventListener("click", () => {
+                dialog.close();
+            });
+        </script>
+    </body>
+</html>

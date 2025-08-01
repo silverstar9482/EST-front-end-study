@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>휴양지에 온 고양이</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section>
+            <article class="cat">
+                <div class="cat-face">
+                    <div class="ear-group">
+                        <div class="ear ear-L">
+                            <div class="ear-inner"></div>
+                        </div>
+                        <div class="ear ear-R">
+                            <div class="ear-inner"></div>
+                        </div>
+                    </div>
+                    <div class="face">
+                        <div class="pattern">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="eye-group">
+                            <div class="eye eye-R">
+                                <div class="pupil"></div>
+                            </div>
+                            <div class="eye eye-L">
+                                <div class="pupil"></div>
+                            </div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="mouse-group">
+                            <div class="mouse"></div>
+                            <div class="lip lipR"></div>
+                            <div class="lip lipL"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-body">
+                    <div class="hand-L"></div>
+                    <div class="leg-group">
+                        <div class="leg legL"></div>
+                        <div class="leg legR"></div>
+                    </div>
+                </div>
+                <div class="sunglasses-group">
+                    <div class="sunglasses">
+                        <div class="sungle-stick"></div>
+                        <div class="sungle single-R">
+                            <div class="light"></div>
+                        </div>
+                        <div class="sungle single-L">
+                            <div class="light"></div>
+                        </div>
+                    </div>
+                    <div class="hand-R"></div>
+                </div>
+            </article>
+
+            <div class="mat"></div>
+
+            <article class="sun-light"></article>
+
+            <article class="bg">
+                <div class="sky">
+                    <div class="sun">
+                        <div class="cloud cloud-R"></div>
+                        <div class="cloud cloud-L"></div>
+                    </div>
+                </div>
+                <div class="sea"></div>
+                <div class="sand"></div>
+                <div class="tree-group">
+                    <div class="tree-shadow shadow-R"></div>
+                    <div class="tree-shadow shadow-L"></div>
+                    <div class="tree tree-R"></div>
+                    <div class="tree tree-L"></div>
+                </div>
+            </article>
+            <div>
+                <audio
+                    id="waveAudio"
+                    src="./images/806027_잔잔히 밀려오는 파도소리.mp3"
+                    autoplay
+                    loop
+                    preload="auto"
+                    style="display: none"
+                ></audio>
+            </div>
+
+            <script>
+                // 페이지 로드 시 즉시 재생 시도
+                window.addEventListener("load", function () {
+                    const audio = document.getElementById("waveAudio");
+
+                    // 자동재생 시도
+                    const playPromise = audio.play();
+
+                    if (playPromise !== undefined) {
+                        playPromise.catch((error) => {
+                            // 자동재생 실패 시 사용자 상호작용 대기
+                            const startAudio = () => {
+                                audio.play();
+                                document.removeEventListener(
+                                    "click",
+                                    startAudio
+                                );
+                                document.removeEventListener(
+                                    "touchstart",
+                                    startAudio
+                                );
+                                document.removeEventListener(
+                                    "keydown",
+                                    startAudio
+                                );
+                            };
+
+                            document.addEventListener("click", startAudio);
+                            document.addEventListener("touchstart", startAudio);
+                            document.addEventListener("keydown", startAudio);
+                        });
+                    }
+                });
+
+                // DOM이 로드되면 즉시 시도
+                document.addEventListener("DOMContentLoaded", function () {
+                    const audio = document.getElementById("waveAudio");
+                    if (audio) {
+                        audio.play().catch(() => {
+                            // 실패해도 조용히 넘어감
+                        });
+                    }
+                });
+            </script>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML Table 태그 예제</title>
+        <style>
+            table {
+                width: 80%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            thead tr:seconde caption {
+                caption-side: top;
+                font-weight: bold;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="colgroup" colspan="4">강사 개인정보</th>
+                </tr>
+                <tr>
+                    <th scope="col">강의 시수 구분</th>
+                    <th scope="col">이름</th>
+                    <th scope="col">나이</th>
+                    <th scope="col">거주지</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="rowgroup" rowspan="2">보조강사</th>
+                    <th scope="row">Rosy</th>
+                    <td>52</td>
+                    <td>브리즈번</td>
+                </tr>
+                <tr>
+                    <th scope="row">ZeeZee</th>
+                    <td>18</td>
+                    <td>제주</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup" rowspan="2">주강사</th>
+                    <th scope="row">Licat</th>
+                    <td>35</td>
+                    <td>도쿄</td>
+                </tr>
+                <tr>
+                    <th scope="row">Wade</th>
+                    <td>28</td>
+                    <td>파리</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>
+                학생 성적표
+            </caption>
+            <thead>
+                <!-- 접근성 도구(스크린 리더)을 생각하여 scope속성(제목만 써줌!)을 꼭 써줘야한다.(구조 인식을 잘 하기 위해) -->
+                <th scope="col">학생</th>
+                <th scope="col">영어</th>
+                <th scope="col">수학</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>라이캣</td>
+                    <td>100</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>로지</td>
+                    <td>80</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>평균</td>
+                    <td>90</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </body>
+</html>

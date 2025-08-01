@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip-path: inset(50%);
+                border: 0;
+                clip: rect(0 0 0 0);
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="bg-black">
+        <form class="text-gray-50 px-32">
+            <p class="text-base sm:text-left md:text-center m-0">
+                시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일
+                주소를 입력하세요.
+            </p>
+            <div class="input-group pt-3 flex row align-items-start">
+                <div class="input-group h-14 grow-2 bg-red">
+                    <label
+                        for="exampleFormControlInput1"
+                        class="form-label sr-only"
+                        >이메일 주소</label
+                    >
+                    <input
+                        type="email"
+                        class="form-control rounded bg-white text-gray-50"
+                        id="exampleFormControlInput1"
+                        placeholder="이메일 주소"
+                    />
+                </div>
+                <button type="submit" class="btn btn-info h-14 rounded grow-2">
+                    시작하기 >
+                </button>
+            </div>
+        </form>
+        <footer class="mt-9 text-gray-50 px-32">
+            <p class="text-base text-left">
+                질문이 있으신가요? 문의 전화:
+                <a class="text-gray-50" href="tel:00-308-321-0161(수신자 부담)"
+                    >00-308-321-0161(수신자 부담)</a
+                >
+            </p>
+        </footer>
+    </body>
+</html>

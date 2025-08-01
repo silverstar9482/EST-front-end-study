@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .parent {
+                position: relative;
+                height: 150px;
+                background-color: rgba(0, 0, 0, 0.7);
+                /* 부모가 z-index를 높여 자식 앞으로 나올 수 없음. */
+                /* z-index: 50; */
+            }
+            .parent > div {
+                width: 100px;
+                height: 100px;
+            }
+
+            .box1 {
+                background-color: lightcoral;
+                position: absolute;
+                /* 자식은 z-index를 음수값으로 주어 부모 뒤로 갈 수 있다. */
+                z-index: -30;
+            }
+            .box2 {
+                background-color: lightcyan;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                z-index: -20;
+            }
+            .box3 {
+                background-color: lightseagreen;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+                z-index: -10;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 20 -->
+        <div class="parent">
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+        </div>
+
+        <!-- 10 -->
+        <div class="parent">
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+        </div>
+    </body>
+</html>

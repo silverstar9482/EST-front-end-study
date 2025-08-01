@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .parent {
+                width: 300px;
+                background-color: gray;
+            }
+            /* 너비의 기본값은 auto. 부모 요소 너비 기준으로 꽉 채움 */
+            .child {
+                background-color: lightcoral;
+                /* 요소가 가질 수 있는 최소 너비 */
+                /* 가능한 한 좁게, 단어 단위로 줄바꿈 */
+                /* width: min-content; */
+
+                /* 컨텐츠 내용의 선호 너비 */
+                /* 내용물이 아무리 길어도 줄바꿈하지 않음 */
+                /* width: max-content; */
+
+                /* min(max-content, max(min-content, 길이값)) */
+                /* 내용물에 맞되, 부모 크기를 넘지 않음 */
+                width: fit-content;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="child">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                alias voluptas, sequi eos expedita sunt sed molestiae excepturi!
+                Adipisci id dicta mollitia quos architecto tempore nobis magni
+                atque, facilis quia!
+            </div>
+        </div>
+    </body>
+</html>

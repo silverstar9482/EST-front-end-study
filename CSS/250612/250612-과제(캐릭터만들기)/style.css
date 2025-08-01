@@ -1,0 +1,517 @@
+:root {
+    --main-color: #d9d9d9;
+    --sub-color: #aaa;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.cat {
+    cursor: pointer;
+}
+
+/* 얼굴 */
+.cat-face {
+    position: relative;
+    z-index: 10;
+}
+
+.face {
+    display: grid;
+    width: 600px;
+    height: 370px;
+    background-image: linear-gradient(180deg, var(--main-color), #cacaca);
+    border-radius: 150px 150px 250px 250px;
+    position: relative;
+
+    position: absolute;
+    top: 107px;
+
+    box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* 귀 */
+@keyframes ear-move-L {
+    0% {
+        transform: rotate(15deg);
+    }
+    60% {
+        transform: rotate(-25deg);
+    }
+}
+
+@keyframes ear-move-R {
+    0% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(25deg);
+    }
+}
+
+.ear-group {
+    position: relative;
+}
+.ear {
+    width: 128px;
+    height: 128px;
+    display: flex;
+    background-color: var(--main-color);
+
+    position: absolute;
+    top: 15px;
+}
+
+.ear-inner {
+    width: 65px;
+    height: 128px;
+
+    background-color: #ffcccc;
+}
+
+.ear-L {
+    justify-content: flex-start;
+    border-radius: 0 100px 0 0;
+    left: 85px;
+    transform: rotate(15deg);
+    animation: ear-move-L 2.5s infinite;
+    transform-origin: bottom;
+}
+.ear-R {
+    justify-content: flex-end;
+    border-radius: 100px 0 0 0;
+    left: 385px;
+    transform: rotate(-15deg);
+    animation: ear-move-R 2.5s infinite;
+    transform-origin: bottom;
+}
+
+.ear-L > .ear-inner {
+    border-radius: 0 100px 0 0;
+}
+.ear-R > .ear-inner {
+    border-radius: 100px 0 0 0;
+}
+
+/* 무늬 */
+.pattern {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.pattern > div {
+    width: 30px;
+    height: 120px;
+    border-radius: 0 0 500px 500px;
+    background-color: #000;
+}
+
+/* 눈 */
+.eye-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    top: 164px;
+    left: 0;
+
+    /* border: 1px solid red; */
+}
+.eye {
+    width: 155px;
+    height: 75px;
+    background-color: #fff;
+    border-radius: 0 0 500px 500px;
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+}
+.pupil {
+    width: 110px;
+    height: 56px;
+    background-color: #000;
+    border-radius: 0 0 500px 500px;
+
+    position: absolute;
+}
+
+.eye-R {
+    left: 338px;
+}
+.eye-L {
+    left: 100px;
+}
+
+/* 코 */
+.nose {
+    width: 45px;
+    height: 25px;
+    background-color: #000;
+    border-radius: 150px 150px 250px 250px;
+    position: absolute;
+    left: 50%;
+    bottom: 92px;
+    transform: translate(-50%, 0);
+    z-index: 8;
+}
+
+/* 입 */
+.mouse-group {
+    position: relative;
+}
+.mouse {
+    width: 174px;
+    height: 53px;
+    background-image: url("./images/mouse.png");
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 7;
+}
+
+.lip {
+    width: 82px;
+    height: 82px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(178, 178, 178, 0) 40%,
+        rgba(153, 153, 153, 1) 100%
+    );
+    border-radius: 100%;
+    position: absolute;
+    z-index: 5;
+}
+
+.lipR {
+    bottom: 45px;
+    right: 214px;
+}
+.lipL {
+    bottom: 45px;
+    left: 214px;
+}
+
+/* 몸통 */
+.cat-body {
+    width: 730px;
+    height: 365px;
+    background-color: var(--main-color);
+    border-radius: 180px;
+
+    position: relative;
+
+    position: absolute;
+    top: 230px;
+    left: 32px;
+    z-index: 4;
+}
+
+.hand-L {
+    width: 100px;
+    height: 90px;
+    border-radius: 0 500px 500px 0;
+    background-image: linear-gradient(
+        90deg,
+        rgba(178, 178, 178, 0),
+        rgba(153, 153, 153, 1)
+    );
+    position: absolute;
+    bottom: 0;
+    left: 175px;
+}
+
+.leg {
+    width: 205px;
+    height: 90px;
+    border-radius: 0 500px 500px 0;
+    position: absolute;
+}
+
+.legL {
+    bottom: 0;
+    right: -0px;
+    background-image: linear-gradient(
+        90deg,
+        var(--main-color) 60%,
+        var(--sub-color)
+    );
+}
+.legR {
+    width: 130px;
+    bottom: 80px;
+    right: -30px;
+    transform: rotate(45deg);
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(
+        90deg,
+        var(--main-color) 50%,
+        var(--sub-color)
+    );
+}
+
+/* 선글라스를 든 손 */
+@keyframes sungle-move {
+    100% {
+        transform: translateY(-70px);
+    }
+}
+.sunglasses-group {
+    width: 730px;
+    height: 590px;
+    display: inline-block;
+    position: relative;
+    z-index: 77;
+}
+
+.cat:hover > .sunglasses-group {
+    animation: sungle-move 1s;
+    animation-fill-mode: both;
+}
+
+.sunglasses {
+    width: 520px;
+    height: 90px;
+    position: relative;
+
+    position: absolute;
+    top: 330px;
+    left: 40px;
+}
+.sungle {
+    width: 235px;
+    height: 90px;
+    border-radius: 0 0 500px 500px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+}
+.light {
+    width: 70px;
+    height: 90px;
+    background-color: rgba(217, 217, 217, 0.2);
+    transform: skewX(-35deg);
+}
+
+.sungle-stick {
+    width: 520px;
+    height: 16px;
+    border-radius: 0 0 100px 100px;
+    background-color: #000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.single-R {
+    left: 14px;
+}
+.single-L {
+    left: 272px;
+}
+
+.hand-R {
+    width: 100px;
+    height: 90px;
+    border-radius: 500px 0 0 500px;
+    background-image: linear-gradient(
+        -90deg,
+        var(--main-color),
+        var(--sub-color)
+    );
+    box-shadow: -5px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 175px;
+    right: 110px;
+}
+
+/* 배경 */
+.bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.sky {
+    width: 100%;
+    height: 20vh;
+    background-color: #daf3ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sun {
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    background-color: #fffba8;
+    margin: 2% auto 0;
+    position: relative;
+}
+
+.cloud {
+    width: 180px;
+    height: 120px;
+    background: url("./images/cloud.png") no-repeat 0 0 / 100% auto;
+    position: absolute;
+    top: 0.5vh;
+}
+
+.cloud-L {
+    left: -20%;
+    transform: translateX(-200px);
+}
+.cloud-R {
+    right: -20%;
+    transform: translateX(200px);
+}
+
+.sea {
+    width: 100%;
+    height: 30vh;
+    background-color: #68bbff;
+    position: absolute;
+    top: 20%;
+    left: 0;
+}
+.sand {
+    width: 100%;
+    height: 60vh;
+    background-color: #fffaee;
+    position: absolute;
+    top: 40%;
+    left: 0;
+}
+
+/* 고양이 위치 조정 */
+.cat {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    z-index: 99;
+    transform: translateX(-50%);
+}
+
+.mat {
+    width: 1120px;
+    height: 350px;
+    background: url("./images/mat.png") no-repeat left top / cover;
+    position: absolute;
+    top: 52vh;
+    left: 50%;
+    transform: translateX(-47%);
+    z-index: 3;
+}
+
+/* 야자수 */
+.tree {
+    width: 500px;
+    height: 80vh;
+    z-index: 8888;
+
+    position: absolute;
+    top: 0;
+}
+@keyframes tree-move-L {
+    50% {
+        transform: skewY(-10deg);
+    }
+}
+@keyframes tree-move-R {
+    50% {
+        transform: skewY(10deg);
+    }
+}
+.tree-L {
+    background: url("./images/leaf.png") no-repeat top left / contain;
+    left: 0;
+    animation: tree-move-L 3s infinite;
+    transform-origin: left;
+}
+.tree-R {
+    background: url("./images/leaf_R.png") no-repeat top right / auto 70%;
+    right: 0;
+    animation: tree-move-R 3s infinite;
+    transform-origin: right;
+}
+
+/* 태양빛 */
+@keyframes sun-move {
+    0% {
+        background-image: linear-gradient(
+            180deg,
+            rgba(255, 196, 32, 0),
+            rgba(255, 255, 255, 0)
+        );
+    }
+
+    20% {
+        background-image: linear-gradient(
+            180deg,
+            rgba(255, 196, 32, 0.2),
+            rgba(255, 255, 255, 0)
+        );
+    }
+
+    50% {
+        background-image: linear-gradient(
+            180deg,
+            rgba(255, 196, 32, 0.4),
+            rgba(255, 255, 255, 0)
+        );
+    }
+
+    70% {
+        background-image: linear-gradient(
+            180deg,
+            rgba(255, 196, 32, 0.5),
+            rgba(255, 255, 255, 0)
+        );
+    }
+
+    100% {
+        background-image: linear-gradient(
+            180deg,
+            rgba(255, 196, 32, 0.7),
+            rgba(255, 255, 255, 0)
+        );
+    }
+}
+
+.sun-light {
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skew(50deg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 196, 32, 0),
+        rgba(255, 255, 255, 0)
+    );
+    filter: blur(8px);
+    z-index: 999;
+    /* animation: sun-move 1s linear; */
+}
+
+.cat:hover ~ .sun-light {
+    animation: sun-move 0.1s ease-in-out;
+    animation-fill-mode: forwards;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            /* 
+            *** 미디어 타입 종류 ***
+            - all: 모든 장치에 적용됩니다.
+            - screen: 주로 컴퓨터 화면, 스마트폰, 태블릿 등의 스크린을 대상으로 보여짐. 웹 사이트를 방문하는 대부분의 사용자들은 이 screen 미디어 타입을 경험.
+            - print: 인쇄될 문서에 적용됩니다. 이는 웹페이지를 인쇄할 때 사용되는 스타일을 명시하는 데 사용.
+            - speech: 음성 출력 장치나 스크린 리더를 위한 스타일을 정의.
+            - projection: 프로젝터를 통한 표시를 위한 스타일을 정의.
+            - tv: 텔레비전 타입의 디바이스에 적용.
+            */
+
+            /*
+            *** media 논리 연산자 ***
+            - and 연산자 : 모든 조건을 만족하는 경우에만 스타일을 적용
+            - not 연산자 :  조건을 반전. 미디어 유형(all, screen, print 등)을 지정한 경우, 부정의 의미는 미디어 유형을 제외한 조건에만 적용
+            - ,(쉼표) : 나열된 조건 중 하나라도 만족하는 경우 스타일을 적용
+            - only 키워드는 미디어 쿼리를 지원하는 브라우저에서만 스타일을 적용
+             */
+            @media screen and (min-width: 640px) and (max-width: 800px) {
+                body {
+                    /* background-color: lightblue; */
+                }
+            }
+
+            @media screen (min-width: 700px), (max-width: 300px) {
+                body {
+                    /* background-color: lightcoral; */
+                }
+            }
+
+            /* orientation : 장치의 방향에 따라 스타일을 적용 */
+            /* 가로 방향 */
+            @media (orientation: landscape) {
+                body {
+                    background-color: orange;
+                }
+            }
+
+            /* 세로 방향 */
+            @media (orientation: portrait) {
+                body {
+                    background-color: skyblue;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        안녕하세요
+    </body>
+</html>
