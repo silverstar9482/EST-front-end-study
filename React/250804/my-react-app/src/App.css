@@ -1,0 +1,85 @@
+#root {
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 30px 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+.health p,
+.mana p,
+.skills p,
+.equipment p {
+  margin-bottom: 5px;
+}
+
+.equipment div:nth-child(3) {
+  margin: 5px 0;
+}
+
+.isOnline span.online {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-left: 5px;
+}
+.isOnline span.offline {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  margin-left: 5px;
+}
+
+.level {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 3px;
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.name {
+  margin-bottom: 10px;
+  align-self: center;
+}
+.name h2 {
+  font-size: 24px;
+}
+
+.legend-level .level {
+  background-color: gold;
+}
+
+.high-level .level {
+  background-color: silver;
+}
+
+.low-level .level {
+  background-color: gray;
+  color: #fff;
+}
