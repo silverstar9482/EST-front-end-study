@@ -28,39 +28,6 @@ const users = [
 
 function Header() {
   const { currentUser, logout } = useContext(UserContext);
-  if (currentUser) {
-    return (
-      <div
-        style={{
-          width: '100%',
-          backgroundColor: 'lightpink',
-          padding: '20px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <h1 style={{ color: '#333', fontSize: '26px' }}>
-          <Link>LOGO</Link>
-        </h1>
-        <nav>
-          <ul style={{ display: 'flex', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
-            <li>
-              <Link to='/'>About</Link>
-            </li>
-            <li>
-              <Link to='/'>Contact</Link>
-            </li>
-            <li>
-              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }} onClick={logout}>
-                로그아웃
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    );
-  }
 
   return (
     <div
@@ -85,9 +52,15 @@ function Header() {
             <Link to='/'>Contact</Link>
           </li>
           <li>
-            <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }}>
-              로그인
-            </button>
+            {currentUser ? (
+              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }} onClick={logout}>
+                로그아웃
+              </button>
+            ) : (
+              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }}>
+                로그인
+              </button>
+            )}
           </li>
         </ul>
       </nav>
