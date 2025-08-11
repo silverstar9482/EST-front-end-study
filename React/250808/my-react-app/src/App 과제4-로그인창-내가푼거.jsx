@@ -53,12 +53,12 @@ function Header() {
           </li>
           <li>
             {currentUser ? (
-              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }}>
-                로1그인
+              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }} onClick={logout}>
+                로그아웃
               </button>
             ) : (
-              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }} onClick={logout}>
-                로그1아웃
+              <button type='button' style={{ backgroundColor: 'hotpink', padding: '10px 15px', borderRadius: '50px', color: '#fff' }}>
+                로그인
               </button>
             )}
           </li>
