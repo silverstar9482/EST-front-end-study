@@ -1,8 +1,4 @@
-import LangSelector from './LangSelector.jsx';
-import Content from './Contents.jsx';
-import { useState, createContext, useContext } from 'react';
-
-const LanguageContext = createContext();
+import { createContext, useContext, useState } from 'react';
 
 const languages = {
   en: {
@@ -25,23 +21,15 @@ const languages = {
   },
 };
 
-function Header() {
-  const { currentLanguage } = useContext(LanguageContext);
-  return <h2>{currentLanguage.title}</h2>;
+const LanguageContext = createContext();
+
+function LanguageProvider({ children }) {
+  const [languageState, setLanguageState] = useState('ko');
+
+  const changeLanguage = (lang) => {
+    setLanguageState(lang);
+  };
+  return <LanguageContext.Provider value={{ languageState, changeLanguage, languages }}>{children}</LanguageContext.Provider>;
 }
 
-function LanguageProvider() {
-  const [language, setLanguage] = useState('ko');
-  const currentLanguage = languages[language];
-
-  return (
-    <LanguageContext.Provider value={{ currentLanguage, language, setLanguage }}>
-      <LangSelector />
-      <Header />
-      <Content />
-    </LanguageContext.Provider>
-  );
-}
-
-export default LanguageProvider;
-export { LanguageContext };
+export { LanguageProvider, LanguageContext };

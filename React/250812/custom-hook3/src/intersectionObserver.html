@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const option = {
+        root: null, // null로 지정하게되면 뷰포트를 기준으로 설정하게 됌.
+        threshold: 0, // target요소가 겹칠때 callback을 호출하게 됌.
+      };
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          // 실제 개발을 할때 여기에 원하는 동작 코드
+          entry.isIntersection; // 화면과 겹쳤는지 안겹쳤는지만 알려줌
+          entry.intersectionRatio; // 화면이 얼마나 겹쳤는지 비율 알려줌
+          entry.target; // 관찰대상 요소를 알려줌
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, option);
+
+      // 관찰할 요소 지정
+      observer.observe(target);
+
+      // 타겟 관찰 종료
+      observer.unobserve(target);
+
+      // 모든 요소에 대한 관찰 중기
+      observer.disconnect();
+    </script>
+  </body>
+</html>

@@ -1,6 +1,14 @@
-import LanguageProvider from './LanguageProvider.jsx';
+import Contents from './Contents';
+import LangSelector from './LangSelector';
+import { LanguageProvider } from './LanguageProvider';
 
 function App() {
-  return <LanguageProvider />;
+  return (
+    <LanguageProvider>
+      <LangSelector />
+      <Contents />
+    </LanguageProvider>
+  );
 }
+
 export default App;

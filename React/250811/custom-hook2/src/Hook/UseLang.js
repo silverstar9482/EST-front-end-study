@@ -1,11 +1,14 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../LanguageProvider';
 
-function useLang() {
-  // 반복되는 부분
+const useLang = () => {
   const context = useContext(LanguageContext);
 
-  return context;
-}
+  return {
+    languageData: context.languages[context.languageState],
+    currentLanguage: context.languageState,
+    changeLanguage: context.changeLanguage,
+  };
+};
 
-export { useLang };
+export default useLang;
