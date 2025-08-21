@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        margin: 10px;
+      }
+      button[type='button'] {
+        display: inline-block;
+        padding: 0 5px;
+      }
+
+      .text-box {
+        width: 850px;
+        margin-top: 20px;
+        border: 5px solid black;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        box-sizing: border-box;
+      }
+
+      p {
+        width: 100%;
+        height: 150px;
+        border: 5px solid lightcoral;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 32px;
+      }
+      .font2 {
+        font-family: 'Kirang Haerang', system-ui;
+      }
+      .font3 {
+        font-family: 'Rubik Bubbles', system-ui;
+      }
+      .font4 {
+        font-family: 'Knewave', system-ui;
+      }
+      .font5 {
+        font-family: 'Fascinate', system-ui;
+      }
+      .font6 {
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>
+        <input type="text" id="textBar" />
+        <button
+          type="button"
+          id="textBtn"
+          onclick="
+        const inputText = document.getElementById('textBar');
+        let txt = inputText.value.trim();
+
+        if(txt === ''){
+          // 비어있으면 초기값인 'hello'로 설정
+      txt = initialText; 
+        }
+
+        store.dispatch({type:'CHANGE_TEXT', payload:txt, timestamp: Date.now(),})
+        "
+        >
+          Click Me!
+        </button>
+        <button type="button">Rounded!</button>
+        <button type="button">Circle!</button>
+        <button type="button">Rect!</button>
+        <button type="button">Red!</button>
+        <button type="button">Green!</button>
+        <button type="button">Blue!</button>
+      </div>
+      <div class="text-box">
+        <p class="font1">hello</p>
+        <p class="font2">hello</p>
+        <p class="font3">hello</p>
+        <p class="font4">hello</p>
+        <p class="font5">hello</p>
+        <p class="font6">hello</p>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js"></script>
+    <script>
+      const initialText = 'hello';
+
+      const reducer = (state, action) => {
+        console.log('Reducer 호출:', {
+          currentState: state,
+          action: action,
+          timestamp: new Date().toLocaleTimeString(),
+        });
+
+        // 초기상태 설정
+        if (state === undefined) {
+          return { text: initialText };
+        } else if (action.type === 'CHANGE_TEXT') {
+          return {
+            ...state,
+            text: action.payload,
+          };
+        }
+
+        return state; // 해당되는 액션이 없을 경우 기존상태 반환
+      };
+
+      const store = Redux.createStore(reducer);
+      console.log('redux Store 생성완료');
+      console.log('초기상태', store.getState());
+      // text 변경 이벤트 핸들러
+      // 버튼 클릭시 호출되어 Redux 액션을 디스패치
+
+      // 상태변화 따라 UI 업데이트하는 랜더링 함수
+      const $textBox = document.querySelectorAll('.text-box p');
+      const textRender = () => {
+        const state = store.getState();
+        $textBox.forEach((txtBox) => {
+          txtBox.innerText = state.text;
+        });
+      };
+
+      // 4. subscribe : 상태가 변경될때마다 render 함수 호출
+      store.subscribe(textRender);
+      textRender();
+
+      // function item1() {
+      //   const state = store.getState();
+      //   const $font1 = document.querySelector('.font1');
+      //   $font1.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item1);
+      // item1();
+
+      // function item1() {
+      //   const state = store.getState();
+      //   const $font1 = document.querySelector('.font1');
+      //   $font1.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item1);
+      // item1();
+
+      // function item1() {
+      //   const state = store.getState();
+      //   const $font1 = document.querySelector('.font1');
+      //   $font1.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item1);
+      // item1();
+
+      // function item2() {
+      //   const state = store.getState();
+      //   const $font2 = document.querySelector('.font2');
+      //   $font2.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item2);
+      // item2();
+
+      // function item3() {
+      //   const state = store.getState();
+      //   const $font3 = document.querySelector('.font3');
+      //   $font3.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item3);
+      // item3();
+
+      // function item4() {
+      //   const state = store.getState();
+      //   const $font4 = document.querySelector('.font4');
+      //   $font4.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item4);
+      // item4();
+
+      // function item5() {
+      //   const state = store.getState();
+      //   const $font5 = document.querySelector('.font5');
+      //   $font5.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item5);
+      // item5();
+
+      // function item6() {
+      //   const state = store.getState();
+      //   const $font6 = document.querySelector('.font6');
+      //   $font6.innerText = `${state.text}`;
+      // }
+      // store.subscribe(item6);
+      // item6();
+    </script>
+  </body>
+</html>
